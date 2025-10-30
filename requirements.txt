@@ -28,7 +28,7 @@ multidict==6.1.0
 packaging==24.2
 pluggy==1.5.0
 pydantic==2.10.6
-pydantic-settings==2.8.0
+pydantic-settings==2.11.0
 pydantic_core==2.27.2
 Pygments==2.19.1
 pytest==8.3.4
