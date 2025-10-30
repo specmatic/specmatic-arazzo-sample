@@ -48,7 +48,7 @@ SQLAlchemy==2.0.38
 sqlmodel==0.0.22
 starlette==0.45.3
 tracerite==1.1.1
-typer==0.15.1
+typer==0.20.0
 typing_extensions==4.12.2
 urllib3==2.3.0
 uvicorn==0.34.0
