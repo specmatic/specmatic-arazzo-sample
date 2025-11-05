@@ -2,7 +2,7 @@ version: 2
 contracts:
   - filesystem:
     provides:
-    - ./workflow/uuid_order_workflow.arazzo_extrapolated.arazzo.yaml
+    - ./workflow/uuid_order_workflow.arazzo_generated.arazzo.yaml
   - filesystem:
       directory: ./central_repo
     consumes:

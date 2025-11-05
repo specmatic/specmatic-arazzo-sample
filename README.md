@@ -65,19 +65,19 @@ Contract tests are run using `Specmatic` and `pytest`.
 
 The `workflow/` directory contains a [minimal Arazzo specification](workflow/uuid_order_workflow.arazzo.yaml) which only contains skeleton steps with references to `operations` (using `operationId`) from OpenAPI specifications of each of the services that are part of our workflow.
 
-### Extrapolating the Specification
+### Generate the Specification
 
-Specmatic Arazzo can extrapolate a complete Arazzo specification based on the above minimal one by filling in missing parameters, request bodies, and defining success and failure actions and outputs.
+Specmatic Arazzo can generate a complete Arazzo specification based on the above minimal one by filling in missing parameters, request bodies, and defining success and failure actions and outputs.
 To perform the extrapolation, execute:
 
 ```shell
-docker run --rm -v "$(pwd):/usr/src/app" specmatic/specmatic-arazzo extrapolate --spec-file=./workflow/uuid_order_workflow.arazzo.yaml -o ./workflow
+docker run --rm -v "$(pwd):/usr/src/app" specmatic/specmatic-arazzo generate --spec-file=./workflow/uuid_order_workflow.arazzo.yaml -o ./workflow
 ```
 
 After executing this command, you should see two new files generated in the [`workflow/`](workflow/) directory:
 
-1. **Extrapolated Specification:** [`uuid_order_workflow.arazzo_extrapolated.arazzo.yaml`](workflow/uuid_order_workflow.arazzo_extrapolated.arazzo.yaml)
-2. **Generated Inputs File:** [`uuid_order_workflow.arazzo_extrapolated.arazzo_input.json`](workflow/uuid_order_workflow.arazzo_extrapolated.arazzo_input.json)
+1. **Extrapolated Specification:** [`uuid_order_workflow.arazzo_generated.arazzo.yaml`](workflow/uuid_order_workflow.arazzo_generated.arazzo.yaml)
+2. **Generated Inputs File:** [`uuid_order_workflow.arazzo_generated.arazzo_input.json`](workflow/uuid_order_workflow.arazzo_generated.arazzo_input.json)
 
 ### Validating the Specification
 
@@ -85,23 +85,20 @@ Once the specification is extrapolated, validate it to ensure that all parameter
 Run the following command to validate the extrapolated specification:
 
 ```shell
-docker run --rm -v "$(pwd):/usr/src/app" specmatic/specmatic-arazzo validate --spec-file=./workflow/uuid_order_workflow.arazzo_extrapolated.arazzo.yaml
+docker run --rm -v "$(pwd):/usr/src/app" specmatic/specmatic-arazzo validate --spec-file=./workflow/uuid_order_workflow.arazzo_generated.arazzo.yaml
 ```
 
-**Tip:** For testing purposes, consider removing the format of `email` field in the [extrapolated Arazzo API spec](workflow/uuid_order_workflow.arazzo_extrapolated.arazzo.yaml).
+**Tip:** For testing purposes, consider removing the format of `enum` for `uuidType` field in the [extrapolated Arazzo API spec](workflow/uuid_order_workflow.arazzo_generated.arazzo.yaml).
 This alteration should trigger a validation failure (as shown below), demonstrating the effectiveness of the validation process.
 
 ```shell
->> ARAZZO-SPEC.WORKFLOW.PlaceOrder.STEP.GetUUID
-   In scenario "Create a UUID. Response: Created"
-   API: POST /uuids -> 201
-     >> REQUEST.BODY.email
-        Expected email string, actual was string
+>> ARAZZO-SPEC.WORKFLOW.PlaceOrder.STEP.GetUUID.REQUEST_BODY.PAYLOAD.uuidType
+Expected ("Regular" or "Premium" or "Enterprise")
 ```
 
 ### Running the Workflow
 
-Before executing the workflow tests, verify that the input values in the [Arazzo inputs file](workflow/uuid_order_workflow.arazzo_extrapolated.arazzo_input.json) are in line with the seed data specified in `run.py`.
+Before executing the workflow tests, verify that the input values in the [Arazzo inputs file](workflow/uuid_order_workflow.arazzo_generated.arazzo_input.json) are in line with the seed data specified in `run.py`.
 The `productId` in `PlaceOrder` and the `id` in `RetrieveProductDetails` should be set to either `1` or `2`.
 
 #### Initialize Services and Populate Data

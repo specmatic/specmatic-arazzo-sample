@@ -11,7 +11,7 @@
         "Uuid": {
             "firstName": ["Jane", "Jason"],
             "lastName": ["Doe", "Smith"],
-            "email": ["john.doe@example.com", "jason.smith@example.com"],
+            "email": ["jane.doe@example.com", "jason.smith@example.com"],
             "uuidType": ["Enterprise", "Premium"]
         }
     }
