@@ -57,7 +57,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGTERM, handle_shutdown)
 
     services = {
-        "UUID Service": ["uvicorn", "uuid_api:app", "--host", "127.0.0.1", "--port", "9000"],
+        "UUID Service": ["uvicorn", "uuid_api:app", "--host", "127.0.0.1", "--port", "8080"],
         "Order Service": ["uvicorn", "order_api:app", "--host", "127.0.0.1", "--port", "5000"],
         "BFF Service": ["uvicorn", "bff:app", "--host", "127.0.0.1", "--port", "3000"],
     }
