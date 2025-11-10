@@ -33,7 +33,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-#### On Windows (Command Prompt):
+#### On Windows:
 ```shell
 python -m venv venv
 venv\Scripts\activate
@@ -70,8 +70,14 @@ The `workflow/` directory contains a [minimal Arazzo specification](workflow/uui
 Specmatic Arazzo can generate a complete Arazzo specification based on the above minimal one by filling in missing parameters, request bodies, and defining success and failure actions and outputs.
 To perform the extrapolation, execute:
 
+- On Unix and PowerShell:
 ```shell
 docker run --rm -v "$(pwd):/usr/src/app" specmatic/specmatic-arazzo generate --spec-file=./workflow/uuid_order_workflow.arazzo.yaml -o ./workflow
+```
+
+- On Windows CMD Prompt:
+```shell
+docker run --rm -v "%cd%:/usr/src/app" specmatic/specmatic-arazzo generate --spec-file=./workflow/uuid_order_workflow.arazzo.yaml -o ./workflow
 ```
 
 After executing this command, you should see two new files generated in the [`workflow/`](workflow/) directory:
@@ -84,8 +90,14 @@ After executing this command, you should see two new files generated in the [`wo
 Once the specification is extrapolated, validate it to ensure that all parameters, request bodies, schemas, outputs, and actions are correctly defined.
 Run the following command to validate the extrapolated specification:
 
+- On Unix and PowerShell:
 ```shell
 docker run --rm -v "$(pwd):/usr/src/app" specmatic/specmatic-arazzo validate --spec-file=./workflow/uuid_order_workflow.arazzo_generated.arazzo.yaml
+```
+
+- On Windows CMD Prompt:
+```shell
+docker run --rm -v "%cd%:/usr/src/app" specmatic/specmatic-arazzo validate --spec-file=./workflow/uuid_order_workflow.arazzo_generated.arazzo.yaml
 ```
 
 **Tip:** For testing purposes, consider removing the format of `enum` for `uuidType` field in the [extrapolated Arazzo API spec](workflow/uuid_order_workflow.arazzo_generated.arazzo.yaml).
@@ -104,6 +116,12 @@ The `productId` in `PlaceOrder` and the `id` in `RetrieveProductDetails` should 
 #### Initialize Services and Populate Data
 Execute the `run.py` script from the root directory to initialize the required services and populate the database with product data:
 
+- On Unix:
+```shell
+python3 run.py
+```
+
+- On Windows:
 ```shell
 python run.py
 ```
@@ -111,8 +129,14 @@ python run.py
 #### Execute Workflow Tests
 After initializing the services, run the workflow tests using `Specmatic Arazzo`.
 
+- On Unix and PowerShell:
 ```shell
 docker run --rm -v "$(pwd):/usr/src/app" specmatic/specmatic-arazzo test --serverUrlIndex 1
+```
+
+- On Windows CMD Prompt:
+```shell
+docker run --rm -v "%cd%:/usr/src/app" specmatic/specmatic-arazzo test --serverUrlIndex 1
 ```
 
 Upon completion of the tests, a detailed HTML report will be generated in the [`build/reports/specmatic/html/index.html`](build/reports/specmatic/html/index.html) directory. 
