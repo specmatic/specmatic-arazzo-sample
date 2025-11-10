@@ -11,7 +11,7 @@ contracts:
         port: 5000
       - specs:
         - io/specmatic/examples/store/openapi/api_uuid_v1.yaml
-        port: 9000
+        port: 8080
 
 
 additionalExampleParamsFilePath: tests/bff/config.json
