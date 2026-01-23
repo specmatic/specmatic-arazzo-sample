@@ -11,7 +11,7 @@ email_validator==2.3.0
 fastapi==0.128.0
 fastapi-cli==0.0.20
 Flask==3.1.2
-greenlet==3.3.0
+greenlet==3.3.1
 h11==0.16.0
 html5tagger==1.3.0
 httpcore==1.0.9
