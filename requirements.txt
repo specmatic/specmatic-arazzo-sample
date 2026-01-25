@@ -36,7 +36,7 @@ python-dotenv==1.2.1
 python-multipart==0.0.21
 PyYAML==6.0.3
 requests==2.32.5
-rich==14.3.0
+rich==14.3.1
 rich-toolkit==0.17.1
 sanic==25.3.0
 sanic-routing==23.12.0
