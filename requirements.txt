@@ -24,7 +24,7 @@ Jinja2==3.1.6
 markdown-it-py==4.0.0
 MarkupSafe==3.0.3
 mdurl==0.1.2
-multidict==6.7.0
+multidict==6.7.1
 packaging==25.0
 pluggy==1.6.0
 pydantic==2.12.5
