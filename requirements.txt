@@ -9,7 +9,7 @@ colorama==0.4.6
 dnspython==2.8.0
 email_validator==2.3.0
 fastapi==0.129.0
-fastapi-cli==0.0.20
+fastapi-cli==0.0.21
 Flask==3.1.2
 greenlet==3.3.1
 h11==0.16.0
