@@ -46,7 +46,7 @@ sniffio==1.3.1
 specmatic==2.39.3
 SQLAlchemy==2.0.46
 sqlmodel==0.0.33
-starlette==0.50.0
+starlette==0.52.1
 tracerite==1.1.3
 typer==0.23.0
 typing_extensions==4.15.0
