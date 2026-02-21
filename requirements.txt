@@ -45,7 +45,7 @@ shellingham==1.5.4
 sniffio==1.3.1
 specmatic==2.39.6.post1
 SQLAlchemy==2.0.46
-sqlmodel==0.0.34
+sqlmodel==0.0.35
 starlette==0.52.1
 tracerite==1.1.3
 typer==0.24.0
