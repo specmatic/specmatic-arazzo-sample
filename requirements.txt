@@ -44,7 +44,7 @@ setuptools==80.10.2
 shellingham==1.5.4
 sniffio==1.3.1
 specmatic==2.41.1
-SQLAlchemy==2.0.48
+SQLAlchemy==2.0.49
 sqlmodel==0.0.38
 starlette==0.52.1
 tracerite==1.1.3
