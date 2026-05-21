@@ -52,6 +52,6 @@ typer==0.25.1
 typing_extensions==4.15.0
 urllib3==2.7.0
 uvicorn==0.47.0
-watchfiles==1.1.1
+watchfiles==1.2.0
 websockets==15.0.1
 Werkzeug==3.1.8
