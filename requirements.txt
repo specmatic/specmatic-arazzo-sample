@@ -49,7 +49,7 @@ sqlmodel==0.0.39
 starlette==0.52.1
 tracerite==1.1.3
 typer==0.26.8
-typing_extensions==4.15.0
+typing_extensions==4.16.0
 urllib3==2.7.0
 uvicorn==0.49.0
 watchfiles==1.2.0
