@@ -30,7 +30,7 @@ pluggy==1.6.0
 pydantic==2.12.5
 pydantic-settings==2.15.0
 pydantic_core==2.41.5
-Pygments==2.20.0
+Pygments==2.21.0
 pytest==9.1.1
 python-dotenv==1.2.3
 python-multipart==0.0.32
