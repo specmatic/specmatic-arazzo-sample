@@ -27,7 +27,7 @@ mdurl==0.1.2
 multidict==6.7.1
 packaging==26.3
 pluggy==1.6.0
-pydantic==2.12.5
+pydantic==2.13.5
 pydantic-settings==2.15.0
 pydantic_core==2.41.5
 Pygments==2.21.0
