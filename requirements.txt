@@ -34,7 +34,7 @@ Pygments==2.21.0
 pytest==9.2.0
 python-dotenv==1.2.4
 python-multipart==0.0.34
-PyYAML==6.0.3
+PyYAML==6.0.4
 requests==2.34.2
 rich==14.3.4
 rich-toolkit==0.20.6
